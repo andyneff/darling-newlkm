@@ -303,7 +303,7 @@ int mach_dev_open(struct inode* ino, struct file* file)
 	{
 		debug_msg("Closing old fd before execve: %d\n", fd_old);
 		old_task->map->linux_task = NULL;
-		sys_close(fd_old);
+		ksys_close(fd_old);
 	}
 	
 	// fork case only
